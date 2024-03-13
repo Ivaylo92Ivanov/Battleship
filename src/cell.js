@@ -1,12 +1,10 @@
 class Cell {
-  // xCoord: left -> right
-  // yCoord: top -> bottom
-  constructor(xCoord, yCoord) {
-    this.xCoord = xCoord;
-    this.yCoord = yCoord;
+  
+  constructor() {
+    this.isHit = false;
+    this.shipHere = undefined;
   }
-  containsShip = false;
-  isHit = false;
+  
 };
 
 module.exports = Cell;
