@@ -7,7 +7,7 @@ const Ship = require('./ship')
 class GameBoard {
   constructor () {
     this.board = []
-
+    this.allShips = [];
     // populate board with Cell nodes, 10x10
     for(let i=0; i<10; i++) {
       const row = []
@@ -17,7 +17,9 @@ class GameBoard {
   }
 
   placeShip = (length, xCoord, yCoord) => {
+    
     const ship = new Ship(length);
+    this.allShips.push(ship)
 
     let xPlacementIsPossible = false;
     let yPlacementIsPossible = false
@@ -49,27 +51,24 @@ class GameBoard {
       for (const cell of xPositionCells) {cell.shipHere = ship} 
     } else {
       for (const cell of yPositionCells) {cell.shipHere = ship} 
-    }
+    };
 
-    
+    return true;
+  }
 
-  // mock return for now
+  receiveAttack = (xCoord, yCoord) => { 
+    let targetedCell = this.board[xCoord][yCoord];
+    if (targetedCell.isHit) return false;
+
+    targetedCell.isHit = true;
+    if (targetedCell.shipHere) targetedCell.shipHere.hit()
     return true
   }
 
-
-    
-
-    
-
-
-
-
-  receiveAttack = (xCoord, yCoord) => { 
-    
+  allShipsAreSunk = () => {
+    for(let ship of this.allShips) { if (!ship.isSunk()) return false };
+    return true
   }
-
 }
-
 
 module.exports =  GameBoard
