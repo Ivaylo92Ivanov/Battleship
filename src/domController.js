@@ -2,13 +2,16 @@ function domController () {
   const body = document.querySelector('body');
   let plOneBoardDiv;
   let plTwoBoardDiv;
+  let randomizeBtn;
+  let startBtn;
 
   const initGame = (plOneBoardObj, plTwoBoardObj) => {
+    body.innerHTML = "";
     placeHeader()
     placeBoards()
     renderBoard(plOneBoardDiv, plOneBoardObj)
     renderBoard(plTwoBoardDiv, plTwoBoardObj)
-    placeRandomizeBtn();
+    placeMenu();
   };
 
   const renderBoard = (board, gameBoardObj) => {
@@ -91,15 +94,39 @@ function domController () {
     return wrapper;
   };
 
-  function placeRandomizeBtn() {
+  const placeMenu = () => {
+    const menu = document.createElement('div');
+    menu.className = 'menu';
+    menu.append(placeRandomizeBtn());
+    menu.append(placeStartGameBtn());
+    body.append(menu)
+  }
 
+  const placeRandomizeBtn = () => {
+    randomizeBtn = document.createElement('button')
+    randomizeBtn.innerText = "Randomize Placement"
+    return randomizeBtn
   };
+
+  const placeStartGameBtn = () => {
+    startBtn = document.createElement('button')
+    startBtn.innerText = "Begin Game"
+    return startBtn
+  }
+
+  const getPlOneBoardDiv = () => plOneBoardDiv
+  const getPlTwoBoardDiv = () => plTwoBoardDiv;
+  const getRandomizeBtn = () => randomizeBtn;
+  const getStartBtn = () => startBtn;
+
 
   return {
     initGame,
     renderBoard,
-    plOneBoardDiv: () => {plOneBoardDiv},
-    plTwoBoardDiv: () => {plTwoBoardDiv},
+    getPlOneBoardDiv,
+    getPlTwoBoardDiv,
+    getRandomizeBtn,
+    getStartBtn,
   }
 }
 

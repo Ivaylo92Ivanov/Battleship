@@ -16,6 +16,8 @@ function gameLoop() {
       randomShipPlacement(plTwoBoard);
 
       gameDom.initGame(plOneBoard, plTwoBoard);
+      gameDom.getRandomizeBtn().addEventListener('click', () => {configureNewGame()})
+      gameDom.getStartBtn().addEventListener('click', () => {})
     }
 
     const randomShipPlacement = (gameBoardObj) => {
