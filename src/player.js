@@ -1,9 +1,6 @@
 
-const GameBoard = require('./gameBoard')
-
 class Player {
-  constructor(myGameBoard, enemyGameBoard) {
-    this.myGameBoard = myGameBoard; // maybe not needed
+  constructor(enemyGameBoard) {
     this.enemyGameBoard = enemyGameBoard;
     this.isWinner = false;
     this.isAI = false;

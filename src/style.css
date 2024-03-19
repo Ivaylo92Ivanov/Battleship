@@ -36,8 +36,8 @@ h2 {
   background-color: rgb(255, 255, 255, 0.5);
 }
 
-
-.board{
+.ai-board,
+.player-board{
   width: 500px;
   height: 500px;
   border: 2px solid black;
@@ -63,6 +63,20 @@ h2 {
 
 .cell.has-ship.is-hit {
   background:radial-gradient(red, blueviolet);
+}
+
+.menu {
+  
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  
+  padding: 0.3rem;
+  background-color:bisque;
+  border-radius: 8px;
 }
 
 
