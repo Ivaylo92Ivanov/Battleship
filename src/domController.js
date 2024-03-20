@@ -4,6 +4,7 @@ function domController () {
   let plTwoBoardDiv;
   let randomizeBtn;
   let startBtn;
+  let restartBtn;
 
   const initGame = (plOneBoardObj, plTwoBoardObj) => {
     body.innerHTML = "";
@@ -29,7 +30,7 @@ function domController () {
   
   const placeHeader = () => {
     const header = document.createElement('h1');
-    header.innerText = 'Battleship Game';
+    header.innerText = '⛴ Battleship Game ⛴';
     header.className = 'game-header';
     body.append(header)
   };
@@ -99,26 +100,34 @@ function domController () {
     menu.className = 'menu';
     menu.append(placeRandomizeBtn());
     menu.append(placeStartGameBtn());
+    menu.append(placeRestartGameBtn());
     body.append(menu)
   }
 
   const placeRandomizeBtn = () => {
-    randomizeBtn = document.createElement('button')
-    randomizeBtn.innerText = "Randomize Placement"
-    return randomizeBtn
+    randomizeBtn = document.createElement('button');
+    randomizeBtn.innerText = "⚙️ Randomize Placement ⚙️";
+    return randomizeBtn;
   };
 
   const placeStartGameBtn = () => {
-    startBtn = document.createElement('button')
-    startBtn.innerText = "Begin Game"
-    return startBtn
+    startBtn = document.createElement('button');
+    startBtn.innerText = "🎬 Begin Game 🎬";
+    return startBtn;
+  }
+
+  const placeRestartGameBtn = () => {
+    restartBtn = document.createElement('button');
+    restartBtn.innerText = "Restart Game";
+    restartBtn.style.visibility = 'hidden';
+    return restartBtn;
   }
 
   const getPlOneBoardDiv = () => plOneBoardDiv
   const getPlTwoBoardDiv = () => plTwoBoardDiv;
   const getRandomizeBtn = () => randomizeBtn;
   const getStartBtn = () => startBtn;
-
+  const getRestartBtn = () => restartBtn;
 
   return {
     initGame,
@@ -127,6 +136,7 @@ function domController () {
     getPlTwoBoardDiv,
     getRandomizeBtn,
     getStartBtn,
+    getRestartBtn ,
   }
 }
 

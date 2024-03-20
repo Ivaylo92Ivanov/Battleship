@@ -17,7 +17,15 @@ function gameLoop() {
 
       gameDom.initGame(plOneBoard, plTwoBoard);
       gameDom.getRandomizeBtn().addEventListener('click', () => {configureNewGame()})
-      gameDom.getStartBtn().addEventListener('click', () => {})
+      gameDom.getStartBtn().addEventListener('click', () => {
+        gameDom.getRandomizeBtn().style.visibility = 'hidden';
+        gameDom.getStartBtn().style.visibility = 'hidden';
+        gameDom.getRestartBtn().style.visibility = 'visible';
+        gameDom.getRestartBtn().addEventListener('click', () => {
+          const youSure = confirm("Do you want to restart game?");
+          if (youSure) {configureNewGame()}
+          });
+      })
     }
 
     const randomShipPlacement = (gameBoardObj) => {
