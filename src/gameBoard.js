@@ -8,24 +8,24 @@ class GameBoard {
   constructor () {
     this.board = []
     this.allShips = [];
+    this.size = 10
     // populate board with Cell nodes, 10x10
-    for(let i=0; i<10; i++) {
+    for(let i=0; i<this.size; i++) {
       const row = []
-      for(let j=0; j<10; j++) { row.push(new Cell()) };
+      for(let j=0; j<this.size; j++) { row.push(new Cell()) };
       this.board.push(row)
     }
   }
 
   placeShip = (length, xCoord, yCoord) => {
-    
     const ship = new Ship(length);
-    this.allShips.push(ship)
+    
 
     let xPlacementIsPossible = false;
     let yPlacementIsPossible = false
     
     // check if placement coordinates are on board
-    const possibleRange = [...Array(10).keys()];
+    const possibleRange = [...Array(this.size).keys()];
     if ( !possibleRange.includes(xCoord) || !possibleRange.includes(yCoord) ) { return false };
 
     // check placement possible on X and Y positions
@@ -52,7 +52,8 @@ class GameBoard {
     } else {
       for (const cell of yPositionCells) {cell.shipHere = ship} 
     };
-
+    
+    this.allShips.push(ship)
     return true;
   }
 

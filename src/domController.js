@@ -112,13 +112,13 @@ function domController () {
 
   const placeStartGameBtn = () => {
     startBtn = document.createElement('button');
-    startBtn.innerText = "🎬 Begin Game 🎬";
+    startBtn.innerText = "☸️ Begin Game ☸️";
     return startBtn;
   }
 
   const placeRestartGameBtn = () => {
     restartBtn = document.createElement('button');
-    restartBtn.innerText = "Restart Game";
+    restartBtn.innerText = "🔁 Restart Game 🔁";
     restartBtn.style.visibility = 'hidden';
     return restartBtn;
   }
@@ -136,7 +136,7 @@ function domController () {
     getPlTwoBoardDiv,
     getRandomizeBtn,
     getStartBtn,
-    getRestartBtn ,
+    getRestartBtn,
   }
 }
 

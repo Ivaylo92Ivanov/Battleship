@@ -65,8 +65,6 @@ h2 {
   background-color: blueviolet;
 }
 
-
-
 .cell.is-hit,
 .ai-board > .cell.is-hit:hover {
   background:lightcoral;
@@ -79,14 +77,16 @@ h2 {
 
 .ai-board > .cell:hover {
   background: radial-gradient(closest-side, #b60707, #1625ad43  , #1625ad43);;
-} ;
+} 
 
 .menu {
-  padding: 0 4rem;
+  padding: 1rem 4rem;
   align-self: stretch;
   margin-top: 1rem;
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
+  justify-content: space-around;
+  background-color: rgb(255, 255, 255, 0.5);
 }
 
 button {
@@ -95,7 +95,7 @@ button {
   padding: 0.3rem 0.5rem;
   color: purple;
   border-radius: 12px;
-  flex:0.5;
+  flex:1;
 }
 
 button:hover {
