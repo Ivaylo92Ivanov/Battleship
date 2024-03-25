@@ -11,7 +11,7 @@ function domController () {
   let plOneBoardDiv;
   let plTwoBoardDiv;
   let randomizeBtn;
-  let startBtn; 
+  let startBtn;
   let restartBtn;
 
   const getPlOneBoardDiv = () => plOneBoardDiv
