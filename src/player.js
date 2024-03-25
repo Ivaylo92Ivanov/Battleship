@@ -2,9 +2,11 @@
 class Player {
   constructor(enemyGameBoard) {
     this.enemyGameBoard = enemyGameBoard;
-    this.isWinner = false;
     this.isAI = false;
-    this.name = 'test';
+    
+  }
+  getName = () => {
+    return this.isAI ? "Artificial Intelligence" : "Human Intelligence" ;
   }
 
   aiAttack = () => {
@@ -22,7 +24,7 @@ class Player {
     const targetedCell = this.enemyGameBoard.board[xCoord][yCoord]
 
     if(targetedCell.isHit) { return false } 
-    
+
     targetedCell.isHit=true;
     if (targetedCell.shipHere) targetedCell.shipHere.hit()
   }

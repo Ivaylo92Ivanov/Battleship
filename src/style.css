@@ -21,10 +21,17 @@ h2 {
   margin: 1rem 0;
 }
 
-.stats-wrapper {
+.player-stats-wrapper,
+.ai-stats-wrapper {
+  text-align: left;
   margin-top: 2.5rem;
-  color: crimson;
+  /* color: rgb(16, 8, 78); */
   font-size: 1.3rem;
+}
+
+.ship-img {
+  max-height: 50px;
+  min-width: 150px;
 }
 
 .boards-wrapper {

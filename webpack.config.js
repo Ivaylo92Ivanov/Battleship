@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -19,9 +19,7 @@ module.exports = {
       },
     ],
   },
-  
   resolve: {
-    // ... rest of the resolve config
     fallback: {
       "path": require.resolve("path-browserify")
     }
